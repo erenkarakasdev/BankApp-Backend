@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AccountService {
@@ -47,6 +48,10 @@ public class AccountService {
     public void deleteAccount(Long id) {
         Account account = accountRepository.findById(id).orElseThrow(() -> new RuntimeException("Account not found"));
         accountRepository.delete(account);
+    }
+
+    public Optional<Account> getAccountById(Long id) {
+        return accountRepository.findById(id);
     }
 
 

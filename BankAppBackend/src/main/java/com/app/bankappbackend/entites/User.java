@@ -1,6 +1,5 @@
 package com.app.bankappbackend.entites;
 
-import com.app.bankappbackend.enums.UserStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

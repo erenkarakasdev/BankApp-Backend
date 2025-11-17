@@ -9,15 +9,17 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
+@Table(name = "account")
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long accountId;
 
-    @Column(name = "userID",unique = true)
+    @JoinColumn(name = "userId", updatable = false, nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     User userId;
 

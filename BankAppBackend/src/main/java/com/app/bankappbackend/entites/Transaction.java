@@ -11,17 +11,18 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "transaction")
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long transactionId;
 
     @ManyToOne
-    @Column(name = "sourceAccount")
+    @JoinColumn(name = "sourceAccount")
     Account sourceAccount;
 
     @ManyToOne
-    @Column(name = "destinationAccount")
+    @JoinColumn(name = "destinationAccount")
     Account destinationAccount;
 
     @Column(name = "description")

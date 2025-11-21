@@ -17,13 +17,11 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long transactionId;
 
-    @ManyToOne
-    @JoinColumn(name = "sourceAccount")
-    Account sourceAccount;
+    @Column(name = "sourceAccount")
+    String sourceAccount;
 
-    @ManyToOne
-    @JoinColumn(name = "destinationAccount")
-    Account destinationAccount;
+    @Column(name = "targetAccount")
+    String targetAccount;
 
     @Column(name = "description")
     String description;

@@ -2,6 +2,7 @@ package com.app.bankappbackend.services;
 
 import com.app.bankappbackend.entites.Account;
 import com.app.bankappbackend.entites.User;
+import com.app.bankappbackend.exceptions.AccountNotFoundException;
 import com.app.bankappbackend.repository.AccountRepository;
 import com.app.bankappbackend.repository.UserRepository;
 import org.iban4j.CountryCode;
@@ -46,7 +47,7 @@ public class AccountService {
     }
 
     public void deleteAccount(Long id) {
-        Account account = accountRepository.findById(id).orElseThrow(() -> new RuntimeException("Account not found"));
+        Account account = accountRepository.findById(id).orElseThrow(() -> new AccountNotFoundException("Kullanıcı hesabı bulunamadı."));
         accountRepository.delete(account);
     }
 

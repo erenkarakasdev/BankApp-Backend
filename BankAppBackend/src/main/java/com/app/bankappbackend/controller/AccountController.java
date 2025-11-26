@@ -1,6 +1,6 @@
 package com.app.bankappbackend.controller;
 
-import com.app.bankappbackend.entites.Account;
+import com.app.bankappbackend.entities.Account;
 import com.app.bankappbackend.services.AccountService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

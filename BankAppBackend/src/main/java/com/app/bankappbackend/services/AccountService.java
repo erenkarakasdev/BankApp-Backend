@@ -1,12 +1,8 @@
 package com.app.bankappbackend.services;
 
-import com.app.bankappbackend.entites.Account;
-import com.app.bankappbackend.entites.User;
+import com.app.bankappbackend.entities.Account;
 import com.app.bankappbackend.exceptions.AccountNotFoundException;
 import com.app.bankappbackend.repository.AccountRepository;
-import com.app.bankappbackend.repository.UserRepository;
-import org.iban4j.CountryCode;
-import org.iban4j.Iban;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.app.bankappbackend.entites;
+package com.app.bankappbackend.entities;
 
 
 import org.springframework.security.core.GrantedAuthority;

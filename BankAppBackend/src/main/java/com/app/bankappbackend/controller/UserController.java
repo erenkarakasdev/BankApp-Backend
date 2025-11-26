@@ -1,22 +1,37 @@
 package com.app.bankappbackend.controller;
 
-import com.app.bankappbackend.entites.User;
+import com.app.bankappbackend.dto.AuthRequest;
+import com.app.bankappbackend.dto.CreateUserRequest;
+import com.app.bankappbackend.entities.User;
+import com.app.bankappbackend.services.JwtService;
 import com.app.bankappbackend.services.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/auth")
+@Slf4j
 public class UserController {
 
     /**
      * UserService Injection.
      */
     @Autowired
-    private UserService userService;
+    UserService userService;
+
+    @Autowired
+    JwtService jwtService;
+
+    @Autowired
+    AuthenticationManager authenticationManager;
 
 
     /**
@@ -32,11 +47,22 @@ public class UserController {
     /**
      * Handles the HTTP POST request to create a new user.
      */
-    @PostMapping
-    public User createUser(@RequestBody User newUser) {
-        return userService.createUser(newUser);
+
+
+    @PostMapping("/addNewUser")
+    public User addUser(@RequestBody CreateUserRequest request) {
+        return userService.createUser(request);
     }
 
+    @PostMapping("/generateToken")
+    public String generateToken(@RequestBody AuthRequest request) {
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
+        if (authentication.isAuthenticated()) {
+            return jwtService.generateToken(request.getUsername());
+        }
+        log.info("invalid username " + request.getUsername());
+        throw new UsernameNotFoundException("invalid username {} " + request.getUsername());
+    }
 
     /**
      * Handles the HTTP DELETE request to remove a user by their unique ID.

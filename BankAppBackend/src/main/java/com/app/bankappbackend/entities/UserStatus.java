@@ -1,4 +1,4 @@
-package com.app.bankappbackend.entites;
+package com.app.bankappbackend.entities;
 
 public enum UserStatus {
     ACTIVE,

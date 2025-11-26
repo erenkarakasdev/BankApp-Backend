@@ -1,9 +1,7 @@
 package com.app.bankappbackend.controller;
 
-import com.app.bankappbackend.entites.Account;
-import com.app.bankappbackend.entites.Card;
+import com.app.bankappbackend.entities.Card;
 import com.app.bankappbackend.services.CardService;
-import com.app.bankappbackend.services.UserService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

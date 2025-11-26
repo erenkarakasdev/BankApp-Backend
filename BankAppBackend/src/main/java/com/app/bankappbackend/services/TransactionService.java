@@ -2,8 +2,8 @@ package com.app.bankappbackend.services;
 
 import com.app.bankappbackend.dto.DepositRequest;
 import com.app.bankappbackend.dto.TransferRequest;
-import com.app.bankappbackend.entites.Account;
-import com.app.bankappbackend.entites.Transaction;
+import com.app.bankappbackend.entities.Account;
+import com.app.bankappbackend.entities.Transaction;
 import com.app.bankappbackend.exceptions.AccountNotFoundException;
 import com.app.bankappbackend.exceptions.InvalidDepositException;
 import com.app.bankappbackend.exceptions.InvalidTransferException;
@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Service
 public class TransactionService {

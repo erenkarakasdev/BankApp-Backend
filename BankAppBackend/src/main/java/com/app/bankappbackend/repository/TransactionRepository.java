@@ -1,6 +1,6 @@
 package com.app.bankappbackend.repository;
 
-import com.app.bankappbackend.entites.Transaction;
+import com.app.bankappbackend.entities.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

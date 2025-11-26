@@ -1,8 +1,6 @@
 package com.app.bankappbackend.services;
 
-import com.app.bankappbackend.entites.Account;
-import com.app.bankappbackend.entites.Card;
-import com.app.bankappbackend.entites.User;
+import com.app.bankappbackend.entities.Card;
 import com.app.bankappbackend.repository.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

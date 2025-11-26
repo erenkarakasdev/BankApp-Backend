@@ -2,8 +2,7 @@ package com.app.bankappbackend.controller;
 
 import com.app.bankappbackend.dto.DepositRequest;
 import com.app.bankappbackend.dto.TransferRequest;
-import com.app.bankappbackend.entites.Account;
-import com.app.bankappbackend.entites.Transaction;
+import com.app.bankappbackend.entities.Transaction;
 import com.app.bankappbackend.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

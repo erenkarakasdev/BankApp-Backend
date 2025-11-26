@@ -6,7 +6,6 @@ import javax.management.relation.Role;
 
 @Builder
 public record CreateUserRequest(
-        String name,
         String username,
         String password,
         Role authorities
